@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import VisibleCounter from './containers/VisibleCounter'
+import VisibleFrame from './containers/VisibleFrame'
 import logo from './logo.svg';
 import './App.css';
 
@@ -12,7 +13,7 @@ class App extends Component {
                     <h1 className="App-title">Welcome to React</h1>
                 </header>
                 <VisibleCounter/>
-
+                <VisibleFrame/>
             </div>
         );
     }
