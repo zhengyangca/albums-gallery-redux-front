@@ -3,7 +3,6 @@ import * as actions from '../actions'
 import Sidebar from '../components/Sidebar'
 
 function mapStateToProps(state) {
-    // console.log(state.AlbumReducer.filteredAlbums);
     return {
         albums: state.AlbumReducer.filteredAlbums
     }
