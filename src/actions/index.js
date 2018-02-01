@@ -25,3 +25,10 @@ export const search = (term) => {
         term: term,
     }
 }
+
+export const initGallery = (album2see) => {
+    return {
+        type: 'init_gallery',
+        album2see: album2see,
+    }
+}

@@ -1,0 +1,11 @@
+.footer {
+    background-color: #222;
+    /*height: 30px;*/
+    color: white;
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: lightgray;
+    height: 100%;
+}

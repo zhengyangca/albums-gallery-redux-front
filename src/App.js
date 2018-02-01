@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
-import VisibleCounter from './containers/VisibleCounter'
-import VisibleFrame from './containers/VisibleFrame'
+import Main from './components/Main'
+import VisibleSidebar from './containers/VisibleSidebar'
 import logo from './logo.svg';
 import './App.css';
+import Footer from "./components/Footer";
+import './css/index.css'
+
 
 class App extends Component {
     render() {
@@ -12,8 +15,15 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo"/>
                     <h1 className="App-title">Welcome to React</h1>
                 </header>
-                <VisibleCounter/>
-                <VisibleFrame/>
+                <div className='row'>
+                    <div className='col-sm-2'>
+                        <VisibleSidebar/>
+                    </div>
+                    <div className='col-sm-8'>
+                        <Main/>
+                    </div>
+                </div>
+                <Footer/>
             </div>
         );
     }

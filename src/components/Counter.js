@@ -6,7 +6,7 @@ export default class Counter extends Component {
     render() {
         const {count, wish_value, onIncreaseClick, onUpdateClick} = this.props
         return (
-            <div>
+            <div className='counter'>
                 <span>{count}</span>
                 <button onClick={onIncreaseClick}>Increase</button>
                 <input value={wish_value} type='text' onChange={onUpdateClick}/>
