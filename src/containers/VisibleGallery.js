@@ -2,7 +2,8 @@ import {connect} from 'react-redux'
 import * as actions from '../actions'
 import Gallery from '../components/Gallery'
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
+    // console.log(ownProps);
     return {
         album_name: state.AlbumReducer.gallery.album_name,
         model_name: state.AlbumReducer.gallery.model_name,

@@ -9,3 +9,7 @@
     background-color: lightgray;
     height: 100%;
 }
+
+.contentBox {
+    padding-bottom: 80px;
+}

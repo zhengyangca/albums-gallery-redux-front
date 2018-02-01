@@ -20,7 +20,7 @@ export default function AlbumReducer(state = {}, action) {
                 gallery: state.gallery,
             }
         case 'init_gallery':
-            console.log(action.album2see.album2see);
+            // console.log(action.album2see.album2see);
             let found_album = albums.find((element) => {
                 return element.album_name === action.album2see.album2see
             });
