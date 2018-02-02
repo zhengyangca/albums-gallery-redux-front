@@ -1,6 +1,14 @@
 # React-Redux Album Gallery
 
-美女相册集，支持Gallery样式查看. 使用JS, React-Redux构建前端; 后端用Python, Pyramid sqlalchemy, 详情查看这里. 
+美女相册集，支持Gallery样式查看. 
+
+### 样式图
+
++++++++++++++++++++++++
+
+使用JS, React-Redux构建前端; 
+
+后端分离在另一个project, 用Python, Pyramid sqlalchemy实现, 详情请看这里. 
 
 另外部署了scrapy crawler周期性爬取Hot美女图片集， 自动导入数据库, 项目详情戳这里.
 
