@@ -2,20 +2,27 @@ import {connect} from 'react-redux'
 import * as actions from '../actions'
 import Gallery from '../components/Gallery'
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
+    let found_album = state.AlbumReducer.albums.find((element) => {
+        return element.album_name === ownProps.album2see
+    });
+    // console.log(found_album);
     return {
-        album_name: state.AlbumReducer.gallery.album_name,
-        model_name: state.AlbumReducer.gallery.model_name,
-        img_urls: state.AlbumReducer.gallery.img_urls,
+        album_name: found_album.album_name,
+        model_name: found_album.model_name,
+        img_urls: found_album.img_urls,
     }
 }
 
-function mapDispatchToProps(dispatch, album2see) {
+function mapDispatchToProps(dispatch) {
     return {
-        initGallery: () => dispatch(actions.initGallery(album2see)),
         getAll: () => dispatch(actions.getAll()),
         onUpdateSearch: event => dispatch(actions.search(event.target.value)),
     }
+}
+
+function componentWillReceiveProps() {
+
 }
 
 const VisibleGallery = connect(

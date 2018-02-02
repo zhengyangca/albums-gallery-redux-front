@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom'
 
 export default class Sidebar extends Component {
     render() {
-        const albums = this.props.albums;
+        const catalogues = this.props.catalogues;
+        // console.log(catalogues);
         return (
             <nav className='sidebar'>
                 <label>This is the sidebar</label>
@@ -13,16 +14,24 @@ export default class Sidebar extends Component {
                 </div>
                 <br/>
 
-                <ul class="nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
-                    <Link to='/albums'>Albums</Link>
+                <ul className="nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
+                    <Link to='/albums'>All Albums</Link>
                     <br/>
-                    {albums.map(album => {
-                        let album_url = '/albums/' + album.album_name;
+                    {catalogues.map(cataItem => {
+                        let model_url = '/models/' + cataItem.model_name;
                         return (
-                            <div key={album.album_name}>
-                                <li><Link to={album_url}>{album.album_name}</Link></li>
+                            <div key={cataItem.model_name}>
+                                <Link to={model_url}>{cataItem.model_name}</Link>
+                                {cataItem.model_albums.map(model_album => {
+                                    let album_url = '/albums/' + model_album;
+                                    return (
+                                        <div key={model_album}>
+                                            <li><Link to={album_url}>{model_album}</Link></li>
+                                        </div>
+                                    );
+                                })}
                             </div>
-                        )
+                        );
                     })}
                 </ul>
 

@@ -12,9 +12,9 @@ export default class Frame extends Component {
                         "/" + album.album_name + "/" + album.img_urls[0];
                     return (
                         <div key={album.album_name} className='col-xs-3'>
-                            <div className='album_name'>{album.album_name}</div>
+                            <div className='album_name'>{album.model_name}</div>
                             <div><Photo img_url={img_fpath}/></div>
-                            <div className='model_name'>{album.model_name}</div>
+                            <div className='model_name'>{album.album_name}</div>
                         </div>
                     )
                 })}

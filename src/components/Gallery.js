@@ -1,13 +1,8 @@
 import React, {Component} from 'react'
 import Photo from "./Photo";
-import {Route, Switch} from 'react-router-dom'
 
 
 export default class Frame extends Component {
-
-    componentDidUpdate() {
-        this.props.initGallery();
-    }
 
     render() {
         const {album_name, model_name, img_urls} = this.props;

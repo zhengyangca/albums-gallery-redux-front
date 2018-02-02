@@ -6,15 +6,6 @@ import VisibleGallery from "../containers/VisibleGallery";
 
 export default class Main extends Component {
 
-    // componentWillReceiveProps(nextProps){
-    //     const skuId = nextProps.match.params.name;
-    //     this.setState({
-    //         skuId
-    //     },()=>{
-    //         this.fetchGoodsInfo();
-    //     });
-    // }
-
     render() {
         return (
             <Switch>
@@ -22,11 +13,15 @@ export default class Main extends Component {
                     <VisibleGallery album2see={props.match.params.name}/>
                 )}/>
 
+                <Route path='/models/:model_name' render={(props) => (
+                    <VisibleFrame model_name={props.match.params.model_name}/>
+                )}/>
+
                 <Route path='/albums' render={() => (
                     <VisibleFrame/>
                 )}/>
 
-                <Route path='/' render={() => (
+                <Route exact path='/' render={() => (
                     <VisibleCounter/>
                 )}/>
             </Switch>

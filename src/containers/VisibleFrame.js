@@ -2,9 +2,15 @@ import {connect} from 'react-redux'
 import * as actions from '../actions'
 import Frame from '../components/Frame'
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
+    let found_album = state.AlbumReducer.filteredAlbums.filter((element) => {
+        return element.model_name === ownProps.model_name
+    });
+
+    found_album = (ownProps.model_name === undefined) ? state.AlbumReducer.albums : found_album;
+
     return {
-        albums: state.AlbumReducer.filteredAlbums
+        albums: found_album
     }
 }
 
