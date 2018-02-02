@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import * as actions from '../actions'
-import Modal from '../components/Modal'
+import Modal from '../components/GalleryModal'
 
 function mapStateToProps(state, ownProps) {
     return {}

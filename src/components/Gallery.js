@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Photo from "./Photo";
-import VisibleModal from '../containers/VisibleModal'
+import VisibleModal from '../containers/VisibleGalleryModal'
 
 
 export default class Frame extends Component {
@@ -23,7 +23,6 @@ export default class Frame extends Component {
                         </div>
                     )
                 })}
-                <VisibleModal/>
             </div>
         )
     }
