@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Photo from "./Photo";
+import VisibleModal from '../containers/VisibleModal'
 
 
 export default class Frame extends Component {
@@ -16,13 +17,13 @@ export default class Frame extends Component {
                     let img_fpath = "http://albums.zhengyang.ca/" + model_name +
                         "/" + album_name + "/" + img_url;
                     return (
-                        <div key={img_url} className='col-xs-3'>
+                        <div key={img_url} className='col-xs-3' data-toggle="modal" data-target="#galleryModal">
                             <div><Photo img_url={img_fpath}/></div>
                             <div className='model_name'>{img_url}</div>
                         </div>
                     )
                 })}
-
+                <VisibleModal/>
             </div>
         )
     }

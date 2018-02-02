@@ -21,10 +21,6 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-function componentWillReceiveProps() {
-
-}
-
 const VisibleGallery = connect(
     mapStateToProps,
     mapDispatchToProps
