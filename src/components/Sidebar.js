@@ -15,6 +15,7 @@ export default class Sidebar extends Component {
                 <br/>
 
                 <ul className="nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
+                    <Link to='/'>Home</Link><br/>
                     <Link to='/albums'>All Albums</Link>
                     <br/>
                     {catalogues.map(cataItem => {

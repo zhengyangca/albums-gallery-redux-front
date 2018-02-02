@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import SearchInput from 'react-search-input'
+import {Link} from 'react-router-dom'
 import Photo from "./Photo";
 
 export default class Frame extends Component {
@@ -12,9 +12,10 @@ export default class Frame extends Component {
                         "/" + album.album_name + "/" + album.img_urls[0];
                     return (
                         <div key={album.album_name} className='col-xs-3'>
-                            <div className='album_name'>{album.model_name}</div>
-                            <div><Photo img_url={img_fpath}/></div>
-                            <div className='model_name'>{album.album_name}</div>
+                            <Link to={'/models/' + album.model_name}>{album.model_name}</Link>
+                            <Link to={'/albums/' + album.album_name}><Photo img_url={img_fpath}/>
+                                <div className='model_name'>{album.album_name}</div>
+                            </Link>
                         </div>
                     )
                 })}
