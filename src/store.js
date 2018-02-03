@@ -6,7 +6,6 @@ import AlbumReducer from './reducers/AlbumReducer'
 import data_albums from './data_albums.json'
 
 
-
 const reducer = combineReducers({
     CountReducer,
     AlbumReducer
@@ -38,14 +37,17 @@ const initialState = {
     },
     AlbumReducer: {
         albums: data_albums,
-        gallery: {},
+        gallery: data_albums[0],
+        lightBox: {
+            isOpen: false,
+            photoIndex: 0,
+        },
         filteredAlbums: [],
         catalogues: catalogues,
     }
 
 };
 
-// console.log(initialState.AlbumReducer.catalogues);
 
 let store = createStore(reducer, initialState);
 

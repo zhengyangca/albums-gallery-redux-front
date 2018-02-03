@@ -18,6 +18,7 @@ export default class Sidebar extends Component {
                     <Link to='/'>Home</Link><br/>
                     <Link to='/albums'>All Albums</Link>
                     <br/>
+                    {/*{console.log(catalogues)}*/}
                     {catalogues.map(cataItem => {
                         let model_url = '/models/' + cataItem.model_name;
                         return (

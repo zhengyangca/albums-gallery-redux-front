@@ -13,15 +13,17 @@ export const updateTodo = (wish_value) => {
 }
 
 
-export const getAll = () => {
-    return {
-        type: 'get_all',
-    }
-}
-
 export const search = (term) => {
     return {
         type: 'search',
         term: term,
+    }
+}
+
+export const initGallery = (album2see) => {
+    // console.log(album2see)
+    return {
+        type: 'initGallery',
+        album2see: album2see,
     }
 }

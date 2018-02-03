@@ -4,6 +4,7 @@ import Sidebar from '../components/Sidebar'
 
 function mapStateToProps(state) {
     // console.log(state.AlbumReducer.catalogues);
+    // console.log(state.AlbumReducer.catalogues);
     return {
         catalogues: state.AlbumReducer.catalogues,
     }
@@ -11,7 +12,6 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        getAll: () => dispatch(actions.getAll()),
         onUpdateSearch: event => dispatch(actions.search(event.target.value)),
     }
 }
