@@ -7,6 +7,7 @@ import lery_albums from './lery_albums.json'
 import gigi_albums from './gigi_albums.json'
 import sugar_albums from './data_sugar.json'
 import xiaoyao_albums from './data_xiaoyao.json'
+import axios from "axios/index";
 
 
 const reducer = combineReducers({
@@ -52,6 +53,20 @@ xiaoyao_albums.map(data_album => {
     });
     data_albums.push(album_unit);
 });
+//================== New Data that from static file server 5050=====================
+let new_albums = [];
+let newdata = [];
+axios.get('http://localhost:5050/fetch/')
+    .then(response => {
+        newdata = response.data;
+        // console.log(response.data);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+console.log(newdata);
+//==================================================================================
+
 
 data_albums.push(lery_albums[0]);
 
