@@ -3,7 +3,10 @@ import {combineReducers} from 'redux'
 import CountReducer from './reducers/CountReducer'
 import AlbumReducer from './reducers/AlbumReducer'
 
-import data_albums from './data_albums.json'
+import lery_albums from './lery_albums.json'
+import gigi_albums from './gigi_albums.json'
+import sugar_albums from './data_sugar.json'
+import xiaoyao_albums from './data_xiaoyao.json'
 
 
 const reducer = combineReducers({
@@ -11,6 +14,46 @@ const reducer = combineReducers({
     AlbumReducer
 });
 
+let data_albums = []
+
+// data format
+gigi_albums.map(data_album => {
+    let album_unit = {}
+    album_unit.album_name = data_album.name;
+    album_unit.model_name = "夏茉GiGi";
+    album_unit.category = "sexy";
+    album_unit.img_urls = [];
+    data_album.contents.map(content => {
+        album_unit.img_urls.push(content.name)
+    });
+    data_albums.push(album_unit);
+});
+
+sugar_albums.map(data_album => {
+    let album_unit = {}
+    album_unit.album_name = data_album.name;
+    album_unit.model_name = "李居利Sugar";
+    album_unit.category = "sexy";
+    album_unit.img_urls = [];
+    data_album.contents.map(content => {
+        album_unit.img_urls.push(content.name)
+    });
+    data_albums.push(album_unit);
+});
+
+xiaoyao_albums.map(data_album => {
+    let album_unit = {}
+    album_unit.album_name = data_album.name;
+    album_unit.model_name = "妮小妖黄楽然xiaoyao";
+    album_unit.category = "sexy";
+    album_unit.img_urls = [];
+    data_album.contents.map(content => {
+        album_unit.img_urls.push(content.name)
+    });
+    data_albums.push(album_unit);
+});
+
+data_albums.push(lery_albums[0]);
 
 const catalogues = [];
 data_albums.map(album => {

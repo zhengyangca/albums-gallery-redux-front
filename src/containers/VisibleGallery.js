@@ -4,7 +4,7 @@ import Gallery from '../components/Gallery'
 
 function mapStateToProps(state) {
     const gallery = state.AlbumReducer.gallery;
-    // console.log(gallery);
+    console.log(gallery);
     return {
         album_name: gallery.album_name,
         model_name: gallery.model_name,

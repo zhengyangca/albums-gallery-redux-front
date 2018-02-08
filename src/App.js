@@ -16,7 +16,7 @@ class App extends Component {
                     <h1 className="App-title">Welcome to React</h1>
                 </header>
                 <div className='row contentBox'>
-                    <div className='col-sm-2'>
+                    <div className='col-sm-3'>
                         <VisibleSidebar/>
                     </div>
                     <div className='col-sm-8'>
