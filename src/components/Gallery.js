@@ -5,10 +5,6 @@ import Gallery from 'react-grid-gallery'
 
 export default class Frame extends Component {
 
-    componentWillMount() {
-        this.props.onInitGalley()
-    }
-
     componentDidUpdate() {
         this.props.onInitGalley()
     }
@@ -16,9 +12,11 @@ export default class Frame extends Component {
 
     render() {
         const {album_name, model_name, img_urls} = this.props;
-        const prefix_domain = "http://albums.zhengyang.ca/" + model_name + "/" + album_name + "/";
+        const prefix_domain = "http://localhost:5050/ftp/" + model_name + "/" + album_name + "/";
         const IMAGES = [];
-
+        if (img_urls === undefined) {
+            return null;
+        }
         return (
             <div className='galley row'>
 
@@ -31,6 +29,8 @@ export default class Frame extends Component {
                     IMAGES.push({
                         src: prefix_domain + img_url,
                         thumbnail: prefix_domain + img_url,
+                        // thumbnailHeight: 400,
+                        // thumbnailWidth: 300,
                         isSelected: false,
                         caption: "After Rain (Jeshu John - designerspics.com)"
                     })

@@ -27,3 +27,10 @@ export const initGallery = (album2see) => {
         album2see: album2see,
     }
 }
+
+export const fetchAlbum = (server_albums) => {
+    return {
+        type: 'fetchAlbum',
+        server_albums: server_albums,
+    }
+}
