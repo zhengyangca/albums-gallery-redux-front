@@ -5,14 +5,27 @@ import Gallery from 'react-grid-gallery'
 
 export default class Frame extends Component {
 
+    componentWillMount() {
+        console.log('hi albums = ');
+        console.log(this.props.albums);
+        if (this.props.albums.length === 0) {
+        } else {
+            this.props.onInitGalley()
+        }
+    }
+
+
     componentDidUpdate() {
-        this.props.onInitGalley()
+        if (this.props.albums.length === 0) {
+        } else {
+            this.props.onInitGalley()
+        }
     }
 
 
     render() {
         const {album_name, model_name, img_urls} = this.props;
-        const prefix_domain = "http://localhost:5050/ftp/" + model_name + "/" + album_name + "/";
+        const prefix_domain = "http://linode.zhengyang.ca:5050/ftp/" + model_name + "/" + album_name + "/";
         const IMAGES = [];
         if (img_urls === undefined) {
             return null;

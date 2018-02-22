@@ -1,5 +1,6 @@
-import {createStore} from 'redux'
+import {createStore, applyMiddleware} from 'redux'
 import * as actions from './actions'
+import thunk from 'redux-thunk';
 import {combineReducers} from 'redux'
 import CountReducer from './reducers/CountReducer'
 import AlbumReducer from './reducers/AlbumReducer'
@@ -20,7 +21,7 @@ const initialState = {
     },
     AlbumReducer: {
         albums: data_albums,
-        gallery: [],
+        gallery: {},
         lightBox: {
             isOpen: false,
             photoIndex: 0,
@@ -31,17 +32,20 @@ const initialState = {
 };
 
 
-let store = createStore(reducer, initialState);
+let store = createStore(reducer, initialState,
+    applyMiddleware(thunk)
+);
 
 console.log('start axios.get');
-axios.get('http://localhost:5050/fetch/')
+axios.get('http://linode.zhengyang.ca:5050/fetch/')
     .then(response => {
         let server_albums = response.data;
+        console.log('fetch data completed, go dispatch');
         store.dispatch(actions.fetchAlbum(server_albums));
     })
     .catch(function (error) {
         console.log(error);
     });
 
-
+console.log('export store');
 export default store;

@@ -6,15 +6,19 @@ function mapStateToProps(state) {
     const gallery = state.AlbumReducer.gallery;
     console.log(gallery);
     return {
-        album_name: gallery.album_name,
-        model_name: gallery.model_name,
-        img_urls: gallery.img_urls,
+        albums: state.AlbumReducer.albums,
+        album_name: gallery === undefined ? '' : gallery.album_name,
+        model_name: gallery === undefined ? '' :gallery.model_name,
+        img_urls: gallery === undefined ? [] :gallery.img_urls,
     }
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
+    // console.log('ownProps.album2see = ' + ownProps.album2see);
     return {
-        onInitGalley: () => dispatch(actions.initGallery(ownProps.album2see)),
+        onInitGalley: () => {
+            dispatch(actions.initGallery(ownProps.album2see))
+        },
         onUpdateSearch: event => dispatch(actions.search(event.target.value)),
     }
 }

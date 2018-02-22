@@ -8,7 +8,7 @@ export default class Frame extends Component {
         return (
             <div className='frame row'>
                 {this.props.albums.map(album => {
-                    let img_fpath = "http://localhost:5050/ftp/" + album.model_name +
+                    let img_fpath = "http://linode.zhengyang.ca:5050/ftp/" + album.model_name +
                         "/" + album.album_name + "/" + album.img_urls[0];
                     return (
                         <div key={album.album_name} className='col-xs-3'>

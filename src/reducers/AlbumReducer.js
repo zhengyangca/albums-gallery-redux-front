@@ -5,7 +5,7 @@ export default function AlbumReducer(state = {}, action) {
     const albums = state.albums;
     switch (action.type) {
         case 'fetchAlbum':
-            // console.log('fetch album');
+            console.log('fetch album');
             const server_albums = action.server_albums;
             let catalogues = [];
             server_albums.map(album => {
@@ -24,7 +24,7 @@ export default function AlbumReducer(state = {}, action) {
             });
             return {
                 albums: server_albums,
-                gallery: server_albums[0],
+                gallery: state.gallery,
                 lightBox: state.lightBox,
                 filteredAlbums: state.filteredAlbums,
                 catalogues: catalogues,
@@ -43,6 +43,8 @@ export default function AlbumReducer(state = {}, action) {
             };
 
         case 'initGallery':
+            console.log('>>>>>>>>>>>>>>>>state.albums = ', state.albums);
+
             const found_album = state.albums.find((element) => {
                 return element.album_name === action.album2see
             });
