@@ -1,6 +1,6 @@
 # React-Redux Album Gallery
 
-美女相册集，支持Gallery样式查看. 
+相册集，支持Gallery样式查看. 
 
 ### 样式图
 
